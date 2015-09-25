@@ -75,4 +75,17 @@ public class RobotiumTest extends ActivityInstrumentationTestCase2 {
         solo.clickOnView(view);
     }
 
+
+    public void testChangeActivity() {
+
+        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
+
+        solo.clickOnButton(1);//Click Button to move to another Detail Activity
+
+        solo.waitForActivity(DetailActivity.class, 2000);// Wait DetailActivity to show with
+        // timeout 2000;
+
+        solo.assertCurrentActivity("Wrong Activity", DetailActivity.class);
+    }
+
 }
