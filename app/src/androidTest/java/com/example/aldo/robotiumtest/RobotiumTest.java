@@ -2,6 +2,7 @@ package com.example.aldo.robotiumtest;
 
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.view.View;
 
 
 import com.robotium.solo.*;
@@ -63,5 +64,15 @@ public class RobotiumTest extends ActivityInstrumentationTestCase2 {
 
     }
 
+    public void testGetButtonAndClick() {
+
+        solo.getView(R.id.button);
+
+        solo.getButton(0);
+
+        View view = solo.getButton("Submit");
+
+        solo.clickOnView(view);
+    }
 
 }
