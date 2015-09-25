@@ -1,6 +1,7 @@
 package com.example.aldo.robotiumtest;
 
 
+import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.View;
 
@@ -18,6 +19,9 @@ public class RobotiumTest extends ActivityInstrumentationTestCase2 {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        Intent intent =new Intent();
+        intent.putExtra("testing","123456");
+        setActivityIntent(intent);
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
