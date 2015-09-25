@@ -1,10 +1,8 @@
 package com.example.aldo.robotiumtest;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v4.app.Fragment;
+import android.view.*;
 import android.webkit.*;
 
 /**
@@ -29,9 +27,9 @@ public class DetailActivityFragment extends Fragment {
         webview.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        String summary = "<html><head><script>function test(){alert(\"test\");}</script></head><body>" +
+        String summary = "<html><head></head><body>" +
                 "<input type=\"text\" id=\"aldo\"/>" +
-                "<input type=\"button\" id=\"click\" onclick=\"test()\" value=\"testing\"/>" +
+                "<input type=\"button\" id=\"click\" value=\"testing\"/>" +
                 "</body></html>";
         webview.loadData(summary, "text/html", null);
     }
